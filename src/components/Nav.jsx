@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { DATA, PROFILES, SECTIONS } from '../data'
 import { IconDownload } from '../icons'
 import { MiniAvatar } from './WhoWatching'
@@ -17,6 +18,25 @@ export default function Nav({
   menuRef,
 }) {
   const profile = PROFILES[profileKey]
+  const [browseOpen, setBrowseOpen] = useState(false)
+  const links = [
+    ...profile.order.map((k) => ({ id: k, label: SECTIONS[k].nav })),
+    { id: 'contact', label: 'Contact' },
+  ]
+
+  useEffect(() => {
+    if (!browseOpen) return undefined
+    const close = (e) => {
+      if (!e.target.closest('#browse, .browse-btn')) setBrowseOpen(false)
+    }
+    document.addEventListener('click', close)
+    return () => document.removeEventListener('click', close)
+  }, [browseOpen])
+
+  const jump = (id) => {
+    setBrowseOpen(false)
+    onGoTo(id)
+  }
 
   return (
     <header className={`nav wrap${solid ? ' solid' : ''}${tucked ? ' tucked' : ''}`} id="nav" style={{ '--prog': progress }}>
@@ -32,34 +52,31 @@ export default function Nav({
         RISHABH <small>SERIES</small>
       </a>
       <ul className="nav-links">
-        {profile.order.map((k) => (
-          <li key={k}>
+        {links.map((link) => (
+          <li key={link.id}>
             <a
-              href={`#${k}`}
-              className={activeSection === k ? 'on' : ''}
+              href={`#${link.id}`}
+              className={activeSection === link.id ? 'on' : ''}
               onClick={(e) => {
                 e.preventDefault()
-                onGoTo(k)
+                jump(link.id)
               }}
             >
-              {SECTIONS[k].nav}
+              {link.label}
             </a>
           </li>
         ))}
-        <li>
-          <a
-            href="#contact"
-            className={activeSection === 'contact' ? 'on' : ''}
-            onClick={(e) => {
-              e.preventDefault()
-              onGoTo('contact')
-            }}
-          >
-            Contact
-          </a>
-        </li>
       </ul>
       <div className="nav-right">
+        <button
+          className="browse-btn"
+          type="button"
+          aria-expanded={browseOpen}
+          aria-controls="browse"
+          onClick={() => setBrowseOpen((v) => !v)}
+        >
+          Browse
+        </button>
         <a className="nav-resume" href={DATA.resumePdf} target="_blank" rel="noopener">
           <IconDownload />
           <span>Resume</span>
@@ -78,6 +95,15 @@ export default function Nav({
           </span>
         </button>
       </div>
+      {browseOpen ? (
+        <div className="menu browse" id="browse">
+          {links.map((link) => (
+            <button key={link.id} type="button" onClick={() => jump(link.id)}>
+              {link.label}
+            </button>
+          ))}
+        </div>
+      ) : null}
       {!menuOpen ? null : (
         <div className="menu" id="menu" ref={menuRef}>
           {Object.entries(PROFILES).map(([k, q]) => (

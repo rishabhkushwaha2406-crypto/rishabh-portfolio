@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { ART, PROFILES, SECTIONS, TILE_PROGRESS } from '../data'
+import { ART, PROFILES, SECTIONS } from '../data'
 import { bg } from '../lib'
 
 export default function ContinueRow({ profileKey, onGoTo }) {
@@ -38,9 +38,6 @@ export default function ContinueRow({ profileKey, onGoTo }) {
               <span className="ep">EPISODE {String(i + 1).padStart(2, '0')}</span>
               <span className="t">{s.label}</span>
               <span className="hint">{s.hint}</span>
-              <span className="bar">
-                <i style={{ width: `${TILE_PROGRESS[k]}%` }} />
-              </span>
             </button>
           )
         })}

@@ -70,6 +70,12 @@ p{margin:0}
 @keyframes up{to{transform:none}}
 @keyframes draw{to{transform:scaleX(1)}}
 @keyframes settle{to{opacity:1;letter-spacing:.55em}}
+@keyframes settle-sm{to{opacity:1;letter-spacing:.22em}}
+@media (max-width:640px){
+  .intro-name{font-size:clamp(64px,18vw,120px)}
+  .intro-sub{letter-spacing:.4em;animation-name:settle-sm}
+  .intro-role{padding-inline:12px}
+}
 @keyframes fadein{to{opacity:1}}
 
 /* Who's watching */
@@ -106,6 +112,9 @@ p{margin:0}
 .nav-links a:hover{color:var(--fg)}
 .nav-links a:hover::after,.nav-links a.on::after{transform:scaleX(1);transform-origin:left}
 .nav-links a.on{color:var(--fg)}
+.browse-btn{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:7px 12px;font-size:13px;font-weight:600}
+.browse-btn[aria-expanded="true"]{border-color:var(--fg)}
+.menu.browse{left:max(var(--pad-x), env(safe-area-inset-left,0px));right:auto;min-width:200px}
 .nav-right{margin-left:auto;display:flex;align-items:center;gap:14px}
 .nav-resume{border:1px solid var(--line);border-radius:4px;padding:7px 12px;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:center;transition:border-color .2s}
 .nav-resume:hover{border-color:var(--fg)}
@@ -121,7 +130,7 @@ p{margin:0}
 .menu button:hover{background:var(--panel-2)}
 .menu .mini{width:26px;height:26px;font-size:15px;border-radius:3px}
 .menu hr{border:0;border-top:1px solid var(--line);margin:6px 0;width:100%}
-@media (max-width:980px){.nav-links{display:none}}
+@media (max-width:980px){.nav-links{display:none}.browse-btn{display:inline-flex}}
 @media (max-width:420px){.nav-resume span{display:none}}
 
 /* ---------- Billboard ---------- */
@@ -155,6 +164,14 @@ p{margin:0}
   .bb-photo{position:relative;width:100%;height:auto;aspect-ratio:4/4.2;margin-bottom:-120px;
     -webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 40%);mask-image:linear-gradient(0deg,transparent 0%,#000 40%);-webkit-mask-composite:source-over;mask-composite:add}
   .bb-photo img{object-position:50% 12%}
+  .bb-name{font-size:clamp(52px,16vw,88px)}
+  .bb-the{letter-spacing:.28em}
+  .bb-syn{font-size:15px}
+  .bb-actions .btn{justify-content:center}
+}
+@media (max-width:420px){
+  .bb-name{font-size:clamp(44px,14vw,64px)}
+  .bb-syn{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 }
 
 /* ---------- Rows ---------- */
@@ -181,6 +198,13 @@ p{margin:0}
 .tile .bar{position:absolute;left:12px;right:12px;bottom:8px;height:3px;background:rgba(255,255,255,.25);border-radius:2px;overflow:hidden;transition:opacity .2s}
 .tile:hover .bar{opacity:0}
 .tile .bar i{display:block;height:100%;background:var(--red)}
+@media (hover:none){
+  .tile:hover,.tile:focus-visible{transform:none;box-shadow:none;transition-delay:0s}
+  .tile .t{bottom:34px;transform:none}
+  .tile .hint{opacity:1;bottom:10px}
+  .poster:hover,.poster:focus-visible{transform:none;box-shadow:none}
+  .pick:hover,.pick:focus-visible{transform:none}
+}
 
 /* ---------- Reveal on scroll (only for content below the fold) ---------- */
 .pre{opacity:0;transform:translateY(28px)}
@@ -237,6 +261,7 @@ section{scroll-margin-top:80px}
 .poster .badge i{font-style:normal;font-family:var(--f-display);color:var(--red);font-size:18px;letter-spacing:.05em}
 .poster h3{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,4.4vw,56px);line-height:.88;color:#fff}
 .poster p{color:#d8d0d5;font-size:14.5px;max-width:48ch}
+.poster-result{font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:#46d369}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font-size:12px;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.1);color:#eee}
 .poster .more{font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px}
@@ -384,7 +409,14 @@ footer{border-top:1px solid var(--line);padding-block:22px calc(22px + env(safe-
 .sheet ol li b{font-family:var(--f-display);font-size:26px;font-weight:400;color:var(--muted);line-height:1}
 .sheet .aside{font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:10px}
 .sheet .aside span{color:var(--fg)}
-@media (max-width:700px){.sheet .inner{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px),(max-height:740px){
+  .sheet .inner{grid-template-columns:minmax(0,1fr)}
+  .sheet .hero{min-height:120px;padding:18px 18px 8px}
+  .sheet .hero h3{font-size:clamp(36px,8vw,52px)}
+  .player{margin-inline:16px}
+  .player iframe,.player-stage{aspect-ratio:16/10;max-height:38vh}
+  .sheet .inner{padding-inline:16px}
+}
 
 /* View transitions: profile avatar flies into the nav, posters open into the modal */
 ::view-transition-group(*){animation-duration:.6s;animation-timing-function:cubic-bezier(.16,1,.3,1)}

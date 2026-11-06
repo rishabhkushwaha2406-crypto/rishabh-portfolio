@@ -195,6 +195,7 @@ function OriginalsSection({ onOpenProject }) {
               </span>
               <h3>{p.title}</h3>
               <p>{p.logline}</p>
+              {p.result ? <span className="poster-result">{p.result}</span> : null}
               <span className="tags">
                 {p.tags.map((t) => (
                   <span key={t}>{t}</span>

@@ -46,6 +46,7 @@ export const DATA = {
       tags: ['Python', 'Pandas', 'Scikit-learn'],
       liveUrl: 'https://credit-card-fraud-detection-wheat.vercel.app/',
       github: 'https://github.com/rishabhkushwaha2406-crypto/credit-card-fraud-detection',
+      result: 'Imbalanced classification · precision, recall, F1, ROC-AUC',
       logline: 'One transaction in hundreds is a fraud. A model has to find it without crying wolf.',
       episodes: [
         'Built a machine-learning model to identify potentially fraudulent credit-card transactions.',
@@ -69,6 +70,7 @@ export const DATA = {
       tags: ['Python', 'NLP', 'Streamlit', 'Scikit-learn', 'Hugging Face'],
       liveUrl: 'https://breaking-digital-abuse.streamlit.app/',
       embed: true,
+      result: '97.2% F1 · 4,940 posts · 0.92 Kappa',
       logline:
         'B.Tech CSE final-year project at United Institute of Technology, Prayagraj. A live app that flags Hinglish cyberbullying.',
       episodes: [
@@ -360,12 +362,3 @@ export const ART = {
   'art-data': 'radial-gradient(120% 100% at 90% 90%, #6d7cff 0%, #26265e 45%, #0d0c18 85%)',
 }
 
-export const TILE_PROGRESS = {
-  story: 72,
-  originals: 45,
-  skills: 88,
-  awards: 60,
-  journey: 35,
-  about: 92,
-  picks: 20,
-}
