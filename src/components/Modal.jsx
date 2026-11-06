@@ -46,7 +46,7 @@ function ProjectBody({ project: p }) {
           {playing ? (
             <iframe
               title={`${p.title} live demo`}
-              src={`${p.liveUrl}?embed=true`}
+              src={p.embed ? `${p.liveUrl}?embed=true` : p.liveUrl}
               allow="clipboard-write"
             />
           ) : (
@@ -106,7 +106,7 @@ function ProjectBody({ project: p }) {
           ) : null}
           <a
             className="btn btn-ghost"
-            href={DATA.github}
+            href={p.github || DATA.github}
             target="_blank"
             rel="noopener"
             style={{ justifyContent: 'center', marginTop: 6 }}

@@ -44,6 +44,8 @@ export const DATA = {
       art: 'art-fraud',
       glyph: '₹',
       tags: ['Python', 'Pandas', 'Scikit-learn'],
+      liveUrl: 'https://credit-card-fraud-detection-wheat.vercel.app/',
+      github: 'https://github.com/rishabhkushwaha2406-crypto/credit-card-fraud-detection',
       logline: 'One transaction in hundreds is a fraud. A model has to find it without crying wolf.',
       episodes: [
         'Built a machine-learning model to identify potentially fraudulent credit-card transactions.',
@@ -66,6 +68,7 @@ export const DATA = {
       glyph: '#',
       tags: ['Python', 'NLP', 'Streamlit', 'Scikit-learn', 'Hugging Face'],
       liveUrl: 'https://breaking-digital-abuse.streamlit.app/',
+      embed: true,
       logline:
         'B.Tech CSE final-year project at United Institute of Technology, Prayagraj. A live app that flags Hinglish cyberbullying.',
       episodes: [

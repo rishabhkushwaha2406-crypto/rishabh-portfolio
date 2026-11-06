@@ -207,7 +207,7 @@ function OriginalsSection({ onOpenProject }) {
           </button>
           {p.liveUrl ? (
             <a className="poster-live" href={p.liveUrl} target="_blank" rel="noopener">
-              Live demo · breaking-digital-abuse.streamlit.app
+              Live demo · {p.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
             </a>
           ) : null}
           </div>
