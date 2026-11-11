@@ -2,7 +2,7 @@ export const DATA = {
   name: 'Rishabh Kushwaha',
   first: 'Rishabh',
   photos: {
-    hero: '/img/hero-suit.png',
+    hero: '/img/headshot.jpg',
     avatar: '/img/portrait.png',
     about: '/img/about-suit.png',
     campus: '/img/campus.jpg',
