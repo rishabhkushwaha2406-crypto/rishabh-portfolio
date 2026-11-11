@@ -120,8 +120,8 @@ function StorySection() {
                 <span>B.Tech CSE</span>
               </div>
               <div>
-                <b>2</b>
-                <span>ML projects</span>
+                <b>3</b>
+                <span>live projects</span>
               </div>
               <div>
                 <b>4</b>
@@ -173,7 +173,7 @@ function OriginalsSection({ onOpenProject }) {
       <div className="sec-head" data-rv>
         <div className="eyebrow">Originals</div>
         <h2 className="sec-title">Projects</h2>
-        <p className="lede">Two machine-learning stories. Open one to see every episode.</p>
+        <p className="lede">Three live stories. Open one to play the episode.</p>
       </div>
       <div className="posters">
         {DATA.projects.map((p, i) => (
@@ -415,7 +415,7 @@ function AboutSection({ aboutParallax }) {
       </div>
       <div className="about">
         <figure className="portrait" data-rv style={{ margin: 0, '--pp': aboutParallax }}>
-          <img src={photo('about')} alt="Rishabh Kushwaha in a dark suit" loading="lazy" id="aboutImg" />
+          <img src={photo('about')} alt="Rishabh Kushwaha in a suit" loading="lazy" id="aboutImg" />
           <figcaption>Rishabh Kushwaha · Bengaluru</figcaption>
         </figure>
         <div>

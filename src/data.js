@@ -2,9 +2,9 @@ export const DATA = {
   name: 'Rishabh Kushwaha',
   first: 'Rishabh',
   photos: {
-    hero: '/img/headshot.jpg',
-    avatar: '/img/avatar.jpg',
-    about: '/img/suit.jpg',
+    hero: '/img/hero-suit.png',
+    avatar: '/img/portrait.png',
+    about: '/img/about-suit.png',
     campus: '/img/campus.jpg',
   },
   resumePdf: '/Rishabh_Kushwaha_Resume.pdf',
@@ -82,6 +82,31 @@ export const DATA = {
         ['Project', 'B.Tech CSE final year'],
         ['College', 'UIT Prayagraj'],
         ['Best model', 'Linear SVM · 97.2% F1'],
+      ],
+    },
+    {
+      id: 'finguard',
+      title: 'FinGuard AI',
+      subtitle: 'Financial-crime intelligence console',
+      genre: 'Thriller',
+      when: '2026',
+      art: 'art-data',
+      glyph: '₹',
+      tags: ['JavaScript', 'React', 'AML', 'Fraud scoring'],
+      liveUrl: 'https://finguard-ai-console.vercel.app/',
+      github: 'https://github.com/rishabhkushwaha2406-crypto/finguard-ai-console',
+      result: 'In-browser console · synthetic data · AML, fraud, cases',
+      logline:
+        'A live console for transaction monitoring, AML rules, fraud scoring, customer risk and case management.',
+      episodes: [
+        'Built an interactive financial-crime console: transaction monitoring, AML rules, fraud scoring, customer risk, graph analytics and case management.',
+        'Added a rule-based AI copilot. Roles are a demo switch, and every screen runs in the browser.',
+        'The benchmark uses a PaySim-style simulator, or a local PaySim / credit-card fraud CSV that never leaves the machine.',
+      ],
+      facts: [
+        ['Runs in', 'The browser'],
+        ['Data', 'Synthetic · never uploaded'],
+        ['Covers', 'AML, fraud, cases, graph'],
       ],
     },
   ],
@@ -343,7 +368,7 @@ export const PROFILES = {
 
 export const SECTIONS = {
   story: { label: 'The Full Story', nav: 'Resume', art: 'art-story', hint: 'The resume as a screenplay' },
-  originals: { label: 'Originals', nav: 'Projects', art: 'art-fraud', hint: 'Two machine-learning projects' },
+  originals: { label: 'Originals', nav: 'Projects', art: 'art-fraud', hint: 'Three live projects' },
   skills: { label: 'Skill Universe', nav: 'Skills', art: 'art-skill', hint: '31 skills in 4 genres' },
   awards: { label: 'Award Season', nav: 'Awards', art: 'art-award', hint: 'Wins, scores and certificates' },
   journey: { label: 'My Journey', nav: 'Journey', photo: 'campus', hint: 'Four seasons, 2018 to now' },

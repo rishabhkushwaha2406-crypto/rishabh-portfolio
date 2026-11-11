@@ -21,7 +21,7 @@ export default function Billboard({ parallax, onGoTo }) {
           <span>2022 – Now</span>
           <span className="chip">B.TECH CSE</span>
           <span className="dot" />
-          <span>2 Originals</span>
+          <span>3 Originals</span>
           <span className="dot" />
           <span>4 Awards &amp; Certificates</span>
         </div>

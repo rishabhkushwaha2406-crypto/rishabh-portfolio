@@ -138,7 +138,7 @@ p{margin:0}
 .bb-photo{position:absolute;top:0;right:0;bottom:0;width:min(54%,820px);z-index:-1;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%),linear-gradient(0deg,transparent 0%,#000 30%);-webkit-mask-composite:source-in;
   mask-image:linear-gradient(90deg,transparent 0%,#000 38%),linear-gradient(0deg,transparent 0%,#000 30%);mask-composite:intersect}
-.bb-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;transform:translateY(calc(var(--p,0) * 70px)) scale(1.0);will-change:transform}
+.bb-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:translateY(calc(var(--p,0) * 70px)) scale(1.0);will-change:transform}
 .entered .bb-photo img{animation:kb 2.2s var(--ease-out) both}
 @keyframes kb{from{transform:scale(1.08);opacity:.0}to{transform:scale(1);opacity:1}}
 .billboard::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 80% at 80% 35%, rgba(110,9,20,.45), transparent 70%)}
@@ -321,7 +321,7 @@ section{scroll-margin-top:80px}
 /* About */
 .about{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(24px,5vw,72px);align-items:center}
 .portrait{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4.4;max-width:420px;width:100%;background:var(--panel)}
-.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transform:translateY(calc(var(--pp,0) * -24px)) scale(1.08)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;transform:translateY(calc(var(--pp,0) * -24px)) scale(1.08)}
 .portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:#ddd;text-transform:uppercase}
 .quote{font-family:var(--f-script);font-size:clamp(19px,2.2vw,26px);line-height:1.5}
 .quote::before{content:"\201C";font-family:var(--f-display);color:var(--red);font-size:90px;line-height:.4;display:block;margin-bottom:18px}
